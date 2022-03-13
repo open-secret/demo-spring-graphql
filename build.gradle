@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.6.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.sonarqube' version '3.3'
 	id 'java'
 }
 
@@ -28,4 +29,12 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+sonarqube {
+   properties {
+     property "sonar.projectKey", "poc-java-mock"
+     property "sonar.host.url", "http://localhost:9000"
+     property "sonar.login", "f176039476096a9f4ae91e424258eeef34299253"
+   }
 }
